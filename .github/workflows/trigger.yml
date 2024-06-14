@@ -6,24 +6,22 @@ on:
 
 runs:
   using: 'node20'  # Especifica la versión de Node.js que tu acción requiere
-  main: 'dist/index.js'  # Ruta al archivo principal de tu acción
+  main: 'main.js'  # Ruta al archivo principal de tu acción
+  jobs:
+    build:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      
+      steps:
+        # Versión de Node.js que deseas usar
+        - name: Configurar Node.js
+          uses: actions/setup-node@v2
+          with:
+            node-version: '20.x'  # Versión de Node.js que deseas usar
 
+        - name: Instalar dependencias
+          run: npm install
 
-jobs:
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-    
-    steps:
-      # Versión de Node.js que deseas usar
-      - name: Configurar Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20.x'  # Versión de Node.js que deseas usar
-
-      - name: Instalar dependencias
-        run: npm install
-
-      - name: Ejecutar script Node.js
-        run: node index.js  # Reemplaza 'tu_script.js' con el nombre de tu script
+        - name: Ejecutar script Node.js
+          run: node index.js  # Reemplaza 'tu_script.js' con el nombre de tu script
 
