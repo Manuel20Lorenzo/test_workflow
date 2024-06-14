@@ -8,7 +8,7 @@ on:
 
 runs:
   using: 'node20'  # Especifica la versión de Node.js que tu acción requiere
-  main: 'main.js'  # Ruta al archivo principal de tu acción
+  main: 'index.js'  # Ruta al archivo principal de tu acción
 
 jobs:
   build:
