@@ -1,0 +1,7 @@
+name: Validar pull request
+on:
+  pull_request:
+    types: ['opened']
+    branches:
+      - 'main'
+    

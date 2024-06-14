@@ -31,3 +31,6 @@ jobs:
 
       - name: Ejecutar script Node.js
         run: node index.js  # Reemplaza 'index.js' con el nombre de tu script principal
+
+      - name: Notificar estatus del push
+        run: /github subscribe Manuel20Lorenzo/test_workflow push
