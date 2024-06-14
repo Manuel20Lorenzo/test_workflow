@@ -1,14 +1,8 @@
 name: 'Test Trigger'
 on:
   push:
-    branches:
-      - main
-    paths:
-      - '**.js'
-
-runs:
-  using: 'node20'  # Especifica la versión de Node.js que tu acción requiere
-  main: 'index.js'  # Ruta al archivo principal de tu acción
+    branches: ["main"]
+    patchs: ["**.js"]
 
 jobs:
   build:
@@ -28,4 +22,3 @@ jobs:
 
       - name: Ejecutar script Node.js
         run: node index.js  # Reemplaza 'index.js' con el nombre de tu script principal
-
