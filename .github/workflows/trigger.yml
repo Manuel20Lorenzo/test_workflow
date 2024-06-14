@@ -23,11 +23,8 @@ jobs:
           node-version: '20'  # Versión de Node.js que deseas usar
           cache-dependency-path: .npmrc
 
-      - name: Limpiar caché de npm
-        run: npm cache clean --force
-
       - name: Instalar dependencias
-        run: npm install -f
+        run: npm install
 
       - name: Ejecutar script Node.js
         run: node index.js  # Reemplaza 'index.js' con el nombre de tu script principal
