@@ -20,7 +20,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'  # Versión de Node.js que deseas usar
-
+          settings-path: .npmrc
+          
       - name: Limpiar caché de npm
         run: npm cache clean --force
 
