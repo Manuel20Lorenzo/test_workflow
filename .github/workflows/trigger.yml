@@ -9,6 +9,10 @@ jobs:
     runs-on: ubuntu-latest
       
     steps:
+
+      - name: Actualizar o installar npm
+        run: npm install -g npm@latest
+
       - name: Checkout código
         uses: actions/checkout@v4
 
