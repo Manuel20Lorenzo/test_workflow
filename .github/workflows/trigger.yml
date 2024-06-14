@@ -34,13 +34,4 @@ jobs:
 
       - name: slack-send
         uses: slackapi/slack-github-action@v1.26.0
-        with:
-        # This data can be any valid JSON from a previous step in the GitHub Action
-        payload: |
-          {
-            "key": "value",
-            "foo": "bar"
-          }
-        env:
-      SLACK_WEBHOOK_URL: xoxe.xoxp-1-Mi0yLTMzNjQwNDY1Mzg4OTYtMzM1MjkyOTUxNjY3My03MjY1NTg2MjU0NzExLTcyOTI4MTE3NDk4NTctMjZmZDFkNDk0OGQ4ZDA2ZmQyYjlmYTNlZmIyNTNjZWIyNjUwOWUwMTc3ZDdlNjM2YTRjYTQ1YTBlMDgwNmE5Ng
             
