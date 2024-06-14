@@ -32,6 +32,6 @@ jobs:
       - name: Ejecutar script Node.js
         run: node index.js  # Reemplaza 'index.js' con el nombre de tu script principal
 
-      - name: slack-send
-        uses: slackapi/slack-github-action@v1.26.0
+      ##- name: slack-send
+        ##uses: slackapi/slack-github-action@v1.26.0
             
