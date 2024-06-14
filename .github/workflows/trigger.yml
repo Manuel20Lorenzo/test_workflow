@@ -15,7 +15,7 @@ jobs:
 
       - name: Checkout código
         uses: actions/checkout@v4
-          persist-credentials: true
+          #persist-credentials: true
 
       - name: Configurar Node.js
         uses: actions/setup-node@v4
