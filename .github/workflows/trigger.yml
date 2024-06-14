@@ -3,4 +3,22 @@ on:
   push:
     branches: ["main"]
     patchs: ["**.js"]
-    
+
+jobs:
+  build:
+    steps:
+      # Versión de Node.js que deseas usar
+      - name: Checkout código
+        uses: actions/checkout@v2
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: [14.x, 16.x, 18.x]  # Versión de Node.js que deseas usar
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar script Node.js
+        run: node tu_script.js  # Reemplaza 'tu_script.js' con el nombre de tu script
+
