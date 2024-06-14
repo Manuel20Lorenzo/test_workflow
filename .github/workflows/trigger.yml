@@ -1,27 +1,31 @@
 name: 'Test Trigger'
 on:
   push:
-    branches: ["main"]
-    patchs: ["**.js"]
+    branches:
+      - main
+    paths:
+      - '**.js'
 
 runs:
   using: 'node20'  # Especifica la versión de Node.js que tu acción requiere
   main: 'main.js'  # Ruta al archivo principal de tu acción
-  jobs:
-    build:
-      # The type of runner that the job will run on
-      runs-on: ubuntu-latest
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
       
-      steps:
-        # Versión de Node.js que deseas usar
-        - name: Configurar Node.js
-          uses: actions/setup-node@v2
-          with:
-            node-version: '20.x'  # Versión de Node.js que deseas usar
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v2
 
-        - name: Instalar dependencias
-          run: npm install
+      - name: Configurar Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'  # Versión de Node.js que deseas usar
 
-        - name: Ejecutar script Node.js
-          run: node index.js  # Reemplaza 'tu_script.js' con el nombre de tu script
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar script Node.js
+        run: node index.js  # Reemplaza 'index.js' con el nombre de tu script principal
 
