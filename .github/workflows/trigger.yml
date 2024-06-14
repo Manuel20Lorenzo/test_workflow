@@ -1,0 +1,6 @@
+name: 'Test Trigger'
+on:
+  push:
+    branches: ["main"]
+    patchs: ["**.js"]
+    
