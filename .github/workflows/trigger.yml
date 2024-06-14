@@ -20,5 +20,5 @@ jobs:
         run: npm install
 
       - name: Ejecutar script Node.js
-        run: node tu_script.js  # Reemplaza 'tu_script.js' con el nombre de tu script
+        run: node index.js  # Reemplaza 'tu_script.js' con el nombre de tu script
 
