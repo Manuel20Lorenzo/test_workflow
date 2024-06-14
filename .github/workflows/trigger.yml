@@ -21,8 +21,11 @@ jobs:
         with:
           node-version: '20'  # Versión de Node.js que deseas usar
 
+      - name: Limpiar caché de npm
+        run: npm cache clean --force
+
       - name: Instalar dependencias
-        run: npm install
+        run: npm install --verbose
 
       - name: Ejecutar script Node.js
         run: node index.js  # Reemplaza 'index.js' con el nombre de tu script principal
