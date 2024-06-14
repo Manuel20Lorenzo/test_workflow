@@ -1,4 +1,4 @@
-name: 'Test Trigger'
+name: 'Corrida de Test'
 on:
   push:
     branches: ["main"]
