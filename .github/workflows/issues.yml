@@ -29,10 +29,13 @@ jobs:
           to: 5875976089
           token: 7069195716:AAGoFINKNewAa95miJsxiBCtVHy2Kb_H7-k
           message: |
-            Notificación de Issue
+          📢 **Notificación de Issue**
 
-            Usuario: ${{ github.actor }}
-            Acción: ${{ github.event.action }}
-            Título del Issue: ${{ github.event.issue.title }}
-            URL del Issue: ${{ github.event.issue.html_url }}
-            Repositorio: ${{ github.repository }}
+          **Usuario:** ${{ github.actor }}
+          **Acción:** ${{ github.event.action }}
+          **Título del Issue:** ${{ github.event.issue.title }}
+          **Estado del Issue:** ${{ github.event.issue.state }}
+          **Descripción del Issue:** ${{ github.event.issue.body }}
+          **Etiquetas del Issue:** ${{ github.event.issue.labels | map('name') | join(', ') }}
+          **URL del Issue:** [${{ github.event.issue.html_url }}](${{ github.event.issue.html_url }})
+          **Repositorio:** ${{ github.repository }}
