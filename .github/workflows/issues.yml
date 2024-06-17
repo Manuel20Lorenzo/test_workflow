@@ -2,7 +2,7 @@ name: Notificar issues creado
 
 on:
   issues:
-    types: [opened, edited, milestoned, comment]
+    types: [opened, edited, milestoned, created]
 
 jobs:
   notify:
@@ -19,6 +19,6 @@ jobs:
 
             Usuario: ${{ github.actor }}
             Acción: ${{ github.event.action }}
-            Issue: ${{ github.event.issue.title }}
-            URL: ${{ github.event.issue.html_url }}
+            Título del Issue: ${{ github.event.issue.title }}
+            URL del Issue: ${{ github.event.issue.html_url }}
             Repositorio: ${{ github.repository }}
