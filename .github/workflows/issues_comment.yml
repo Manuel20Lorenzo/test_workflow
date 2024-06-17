@@ -1,0 +1,28 @@
+name: Procesar Comentario en Issue
+
+on:
+  issue_comment:
+    types: [created, edited, deleted]
+
+jobs:
+  process-comment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v2
+
+      - name: Telegram Notify
+        uses: appleboy/telegram-action@v0.1.1
+        with:
+          to: 5875976089
+          token: 7069195716:AAGoFINKNewAa95miJsxiBCtVHy2Kb_H7-k
+          message: |
+            📢 **Nuevo Comentario en Issue**
+
+            **Usuario:** ${{ github.event.comment.user.login }}
+            **Acción:** ${{ github.event.action }}
+            **Comentario:** ${{ github.event.comment.body }}
+            **Issue:** ${{ github.event.issue.title }}
+            **Repositorio:** ${{ github.repository }}
+            **URL del Issue:** ${{ github.event.issue.html_url }}
