@@ -1,9 +1,7 @@
-name: Validar pull request
+name: Notificar issues creado
 on:
-  pull_request:
-    types: ['opened']
-    branches:
-      - 'main'
+  issues:
+    types: [opened, edited, milestoned]
     
 jobs:
   build:
@@ -19,9 +17,7 @@ jobs:
             ===================================================
                               INICIO
             ===================================================
-            ${{ github.actor }} created commit:
+            ${{ github.actor }} created issue:
             Commit message: ${{ github.event.commits[0].message }}
             
             Repository: ${{ github.repository }}
-            
-            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
