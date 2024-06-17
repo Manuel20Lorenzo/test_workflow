@@ -1,0 +1,38 @@
+name: Notificar issues creado
+
+on:
+  issues:
+    types: [opened, edited
+    ,deleted
+    ,transferred
+    ,pinned
+    ,unpinned
+    ,closed
+    ,reopened
+    ,assigned
+    ,unassigned
+    ,labeled
+    ,unlabeled
+    ,locked
+    ,unlocked
+    ,milestoned
+    ,demilestoned]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Telegram Notify
+        uses: appleboy/telegram-action@v0.1.1
+        with:
+          to: 584241599592
+          token: 7069195716:AAGoFINKNewAa95miJsxiBCtVHy2Kb_H7-k
+          message: |
+            Notificación de Issue
+
+            Usuario: ${{ github.actor }}
+            Acción: ${{ github.event.action }}
+            Título del Issue: ${{ github.event.issue.title }}
+            URL del Issue: ${{ github.event.issue.html_url }}
+            Repositorio: ${{ github.repository }}
