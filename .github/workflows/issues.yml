@@ -26,7 +26,7 @@ jobs:
       - name: Telegram Notify
         uses: appleboy/telegram-action@v0.1.1
         with:
-          to: 584241599592
+          to: 5875976089
           token: 7069195716:AAGoFINKNewAa95miJsxiBCtVHy2Kb_H7-k
           message: |
             Notificación de Issue
