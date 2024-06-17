@@ -3,13 +3,15 @@ name: Notificar pull request
 on:
     pull_request:
       types: [opened, reopened]
-      patchs: ["**.js"]
+      patchs: 
+        - "**.js"
 
 jobs:
     process-:
         runs-on: ubuntu-latest
 
         steps:
+
             - name: Telegram Notify
             uses: appleboy/telegram-action@v0.1.1
             with:
