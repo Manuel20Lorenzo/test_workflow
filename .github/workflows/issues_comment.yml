@@ -25,3 +25,4 @@ jobs:
             **Comentario:** ${{ github.event.comment.body }}
             **Issue:** ${{ github.event.issue.title }}
             **Repositorio:** ${{ github.repository }}
+            **URL del Issue:** ${{ github.event.issue.html_url }}
