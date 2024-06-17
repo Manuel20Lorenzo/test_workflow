@@ -44,5 +44,5 @@ jobs:
             **Estado del Issue:** ${{ github.event.issue.state }}
             **Descripción del Issue:** ${{ github.event.issue.body }}
             **Etiquetas del Issue:** ${{ github.event.issue.labels  }}
-            **URL del Issue:** [${{ github.event.issue.html_url }}](${{ github.event.issue.html_url }})
+            **URL del Issue:** ${{ github.event.issue.html_url }}
             **Repositorio:** ${{ github.repository }}
