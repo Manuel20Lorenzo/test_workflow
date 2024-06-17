@@ -38,8 +38,8 @@ jobs:
         with:
           environment: 'test'
           secrets: inherit # MUST HAVE THIS
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
+          to: '584241599592'
+          token: 7069195716:AAGoFINKNewAa95miJsxiBCtVHy2Kb_H7-k
           message: |
             ===========================================
                             INICIO
