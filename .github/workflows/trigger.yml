@@ -7,7 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    envirement: 'test'
     secrets: inherit # MUST HAVE THIS
+    
     steps:
 
       - name: Actualizar o installar npm
