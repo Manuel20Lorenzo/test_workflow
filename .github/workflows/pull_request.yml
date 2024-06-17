@@ -1,0 +1,27 @@
+name: Notificar pull request
+
+on:
+    pull_request:
+      types: [opened, reopened]
+      patchs: ["**.js"]
+
+jobs:
+    process-:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Telegram Notify
+            uses: appleboy/telegram-action@v0.1.1
+            with:
+                to: 5875976089
+                token: 7069195716:AAGoFINKNewAa95miJsxiBCtVHy2Kb_H7-k
+                message: |
+                🚀 **Nuevo Pull Request abierto**
+
+                **Usuario:** ${{ github.event.pull_request.user.login }}
+                **Título:** ${{ github.event.pull_request.title }}
+                **Descripción:** ${{ github.event.pull_request.body }}
+                **URL del Pull Request:** ${{ github.event.pull_request.html_url }}
+                **Repositorio:** ${{ github.repository }}
+      
+            
