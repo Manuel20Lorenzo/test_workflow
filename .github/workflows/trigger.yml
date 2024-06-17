@@ -7,8 +7,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    envirement: 'test'
-    secrets: inherit # MUST HAVE THIS
     
     steps:
 
@@ -38,6 +36,8 @@ jobs:
         uses: appleboy/telegram-action@master
         #secrets: inherit # MUST PUT THIS!
         with:
+          environment: 'test'
+          secrets: inherit # MUST HAVE THIS
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
