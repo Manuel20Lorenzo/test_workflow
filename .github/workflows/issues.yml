@@ -24,8 +24,7 @@ jobs:
     environment: test
     steps:
       
-      - name: Checkout code
-        uses: actions/checkout@v2
+      
 
       - name: Enable Debug
         run: echo "ACTIONS_RUNNER_DEBUG=true" >> $GITHUB_ENV
