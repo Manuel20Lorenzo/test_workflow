@@ -21,7 +21,7 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
-
+    environment: test
     steps:
       
       - name: Checkout code
@@ -33,8 +33,8 @@ jobs:
       - name: Telegram Notify
         uses: appleboy/telegram-action@v0.1.1
         with:
-          to: 5875976089
-          token: 7069195716:AAGoFINKNewAa95miJsxiBCtVHy2Kb_H7-k
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             📢 **Notificación de Issue**
 
