@@ -41,12 +41,7 @@ jobs:
               ===================================================
                                 INICIO
               ===================================================
-              ${{ github.actor }} created commit:
-              Commit message: ${{ github.event.commits[0].message }}
               
-              Repository: ${{ github.repository }}
-              
-              See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
       ##- name: slack-send
         ##uses: slackapi/slack-github-action@v1.26.0
             
