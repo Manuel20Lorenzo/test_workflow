@@ -9,14 +9,14 @@ on:
 jobs:
   process-pull-request:
     runs-on: ubuntu-latest
-
+    environment: test
     steps:
-
+        
       - name: Enviar notificación a Telegram
         uses: appleboy/telegram-action@v0.1.1
         with:
-          to: 5875976089
-          token: 7069195716:AAGoFINKNewAa95miJsxiBCtVHy2Kb_H7-k
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             🚀 **Nuevo Pull Request abierto**
 
