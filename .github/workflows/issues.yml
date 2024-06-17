@@ -1,22 +1,24 @@
 name: Notificar issues creado
 on:
   issues:
-    types: [opened, edited, milestoned]
+    types: [opened, edited, milestoned, comment]
     
 jobs:
+  
   build:
+    
     runs-on: ubuntu-latest
-      
+    
     steps:
+      
       - name: Telegram Notify
       uses: appleboy/telegram-action@v0.1.1
       with:
           to: 584241599592
           token: 7069195716:AAGoFINKNewAa95miJsxiBCtVHy2Kb_H7-k
           message: |
-            ===================================================
-                              INICIO
-            ===================================================
+            CREACION DE ISSUES  
+
             ${{ github.actor }} created issue:
             Commit message: ${{ github.event.commits[0].message }}
             

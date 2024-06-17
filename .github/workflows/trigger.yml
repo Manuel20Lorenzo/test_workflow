@@ -41,9 +41,9 @@ jobs:
           to: 5875976089
           token: 7069195716:AAGoFINKNewAa95miJsxiBCtVHy2Kb_H7-k
           message: |
-            ===========================================
-                            INICIO
-            ===========================================
+
+            PUSH REQUEST INIT
+
             ${{ github.actor }} created commit:
               Commit message: ${{ github.event.commits[0].message }}
               
