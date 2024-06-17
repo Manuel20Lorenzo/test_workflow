@@ -1,7 +1,7 @@
 name: 'Corrida de Test'
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "test"]
     patchs: ["**.js"]
 
 jobs:
@@ -31,6 +31,19 @@ jobs:
 
       - name: Ejecutar script Node.js
         run: node index.js  # Reemplaza 'index.js' con el nombre de tu script principal
+
+      - name: send telegram message on push
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ${{ github.actor }} created commit:
+            Commit message: ${{ github.event.commits[0].message }}
+            
+            Repository: ${{ github.repository }}
+            
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
 
       ##- name: slack-send
         ##uses: slackapi/slack-github-action@v1.26.0
