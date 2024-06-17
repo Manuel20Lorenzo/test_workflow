@@ -2,7 +2,21 @@ name: Notificar issues creado
 
 on:
   issues:
-    types: [opened, edited, milestoned, created]
+    types: [opened, edited
+    ,deleted
+    ,transferred
+    ,pinned
+    ,unpinned
+    ,closed
+    ,reopened
+    ,assigned
+    ,unassigned
+    ,labeled
+    ,unlabeled
+    ,locked
+    ,unlocked
+    ,milestoned
+    ,demilestoned]
 
 jobs:
   notify:
