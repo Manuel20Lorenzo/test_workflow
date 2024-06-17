@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-      
+    secrets: inherit # MUST HAVE THIS
     steps:
 
       - name: Actualizar o installar npm
@@ -34,6 +34,7 @@ jobs:
 
       - name: send telegram message on push
         uses: appleboy/telegram-action@master
+        #secrets: inherit # MUST PUT THIS!
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
