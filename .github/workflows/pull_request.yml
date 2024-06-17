@@ -5,3 +5,20 @@ on:
     branches:
       - 'main'
     
+jobs:
+  build:
+    runs-on: ubuntu-latest
+      
+    steps:
+      - name: Telegram Notify
+      uses: appleboy/telegram-action@v0.1.1
+      with:
+          to: 584241599592
+          token: 7069195716:AAGoFINKNewAa95miJsxiBCtVHy2Kb_H7-k
+          message: |
+            ${{ github.actor }} created commit:
+            Commit message: ${{ github.event.commits[0].message }}
+            
+            Repository: ${{ github.repository }}
+            
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
