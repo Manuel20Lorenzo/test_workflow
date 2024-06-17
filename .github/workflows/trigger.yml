@@ -32,19 +32,21 @@ jobs:
       - name: Ejecutar script Node.js
         run: node index.js  # Reemplaza 'index.js' con el nombre de tu script principal
 
-      - name: send telegram message on push
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
+      - name: Telegram Notify
+      uses: appleboy/telegram-action@v0.1.1
+      with:
+          to: 584241599592
+          token: 7069195716:AAGoFINKNewAa95miJsxiBCtVHy2Kb_H7-k
           message: |
+            ===================================================
+                              INICIO
+            ===================================================
             ${{ github.actor }} created commit:
             Commit message: ${{ github.event.commits[0].message }}
             
             Repository: ${{ github.repository }}
             
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
-
       ##- name: slack-send
         ##uses: slackapi/slack-github-action@v1.26.0
             
